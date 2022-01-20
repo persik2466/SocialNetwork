@@ -21,7 +21,7 @@ namespace SocialNetwork.PLL.Views
 
             addedFriend.ToList().ForEach(friend =>
             {
-                SuccessMessage.Show("Ваш друг "+ friend.FriendFirstName+", адрес: " + friend.FriendEmail);
+                SuccessMessage.Show("Ваш друг " + friend.FriendFirstName + ", адрес: " + friend.FriendEmail);
             });
         }
     }

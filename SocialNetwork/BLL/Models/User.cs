@@ -27,8 +27,8 @@ namespace SocialNetwork.BLL.Models
             string favoriteMovie,
             string favoriteBook,
             IEnumerable<Message> incomingMessages,
-            IEnumerable<Message> outgoingMessages
-            ,IEnumerable<Friend> addedFriend
+            IEnumerable<Message> outgoingMessages,
+            IEnumerable<Friend> addedFriend
             )
         {
             this.Id = id;
