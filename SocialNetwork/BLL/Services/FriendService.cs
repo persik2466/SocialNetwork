@@ -13,14 +13,25 @@ namespace SocialNetwork.BLL.Services
     {
         IFriendRepository friendRepository;
         IUserRepository userRepository;
-
         public FriendService()
         {
             userRepository = new UserRepository();
             friendRepository = new FriendRepository();
-
         }
+        public IEnumerable<Friend> GetAddedFriendByUserId(int userId)
+        {
+            var friends = new List<Friend>();
 
+            friendRepository.FindAllByUserId(userId).ToList().ForEach(m =>
+            {
+                var userUserEntity = userRepository.FindById(m.user_id);
+                var friendUserEntity = userRepository.FindById(m.friend_id);
+
+                friends.Add(new Friend(m.id, userUserEntity.email, friendUserEntity.email, friendUserEntity.firstname));
+            });
+
+            return friends;
+        } 
         public void FriendAdd(FriendData friendData)
         {
             var findUserEntity = this.userRepository.FindByEmail(friendData.FriendEmail);

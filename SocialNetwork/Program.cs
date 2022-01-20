@@ -23,6 +23,7 @@ namespace SocialNetwork
         public static FriendAddView friendAddView;
         public static UserIncomingMessageView userIncomingMessageView;
         public static UserOutcomingMessageView userOutcomingMessageView;
+        public static UserAddedFriendView userAddedFriendView;
 
         static void Main(string[] args)
         {
@@ -40,6 +41,7 @@ namespace SocialNetwork
             friendAddView = new FriendAddView(userService, friendService);
             userIncomingMessageView = new UserIncomingMessageView();
             userOutcomingMessageView = new UserOutcomingMessageView();
+            userAddedFriendView = new UserAddedFriendView();
 
             while (true)
             {

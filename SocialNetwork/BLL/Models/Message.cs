@@ -18,6 +18,5 @@ namespace SocialNetwork.BLL.Models
             this.SenderEmail = senderEmail;
             this.RecipientEmail = recipientEmail;
         }
-
     }
 }

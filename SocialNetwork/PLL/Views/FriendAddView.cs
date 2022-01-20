@@ -34,7 +34,10 @@ namespace SocialNetwork.PLL.Views
 
                 SuccessMessage.Show("Друг добавлен!");
 
-                user = userService.FindById(user.Id);
+                //user = userService.FindById(user.Id);
+                user = userService.FindByEmail(friendData.FriendEmail);
+                SuccessMessage.Show("Вашего друга зовут " + user.FirstName);
+
             }
 
             catch (UserNotFoundException)
@@ -51,7 +54,6 @@ namespace SocialNetwork.PLL.Views
             {
                 AlertMessage.Show("Произошла ошибка при добавлении друга!");
             }
-
         }
     }
 }

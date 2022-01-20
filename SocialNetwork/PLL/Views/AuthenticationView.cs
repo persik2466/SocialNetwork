@@ -45,7 +45,6 @@ namespace SocialNetwork.PLL.Views
             {
                 AlertMessage.Show("Пользователь не найден!");
             }
-
         }
     }
 }

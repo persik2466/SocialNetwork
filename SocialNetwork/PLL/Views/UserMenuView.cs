@@ -21,6 +21,7 @@ namespace SocialNetwork.PLL.Views
             {
                 Console.WriteLine("Входящие сообщения: {0}", user.IncomingMessages.Count());
                 Console.WriteLine("Исходящие сообщения: {0}", user.OutgoingMessages.Count());
+                Console.WriteLine("Количество друзей: {0}", user.AddedFriend.Count());
 
                 Console.WriteLine("Просмотреть информацию о моём профиле (нажмите 1)");
                 Console.WriteLine("Редактировать мой профиль (нажмите 2)");
@@ -61,7 +62,6 @@ namespace SocialNetwork.PLL.Views
 
                     case "5":
                         {
-
                             Program.userIncomingMessageView.Show(user.IncomingMessages);
                             break;
                         }
@@ -69,6 +69,11 @@ namespace SocialNetwork.PLL.Views
                     case "6":
                         {
                             Program.userOutcomingMessageView.Show(user.OutgoingMessages);
+                            break;
+                        }
+                    case "8":
+                        {
+                            Program.userAddedFriendView.Show(user.AddedFriend);
                             break;
                         }
                 }
